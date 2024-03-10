@@ -1,0 +1,34 @@
+using System;
+using System.Collections;
+class Program
+{
+public static void Main()
+{
+// create a dictionary
+Dictionary<int, string> country = new Dictionary<int,
+string>();
+Console.WriteLine("Enter number of items you want to add in
+list");
+int n=Convert.ToInt32(Console.ReadLine());
+int countryCode;
+string countryName;
+for(int i=0;i<n;i++)
+{
+
+Console.WriteLine("Enter Country Code");
+countryCode=Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter Country Name");
+countryName=Console.ReadLine().ToString();
+country.Add(countryCode,countryName);
+}
+Console.WriteLine("Dictionary Data is");
+foreach (KeyValuePair<int, string> entry in country)
+{
+Console.WriteLine(entry.Key + " : " + entry.Value);
+}
+Console.WriteLine("Enter key to fin value");
+int key=Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Value having key {0} is {1}: "
+,key,country[key]);
+}
+}
